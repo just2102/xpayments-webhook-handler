@@ -26,3 +26,8 @@ export class PostPaymentRequestDto {
   @IsNumber()
   amount: number;
 }
+
+export class PostPaymentResponseDto {
+  success: boolean;
+  message?: string;
+}

@@ -5,6 +5,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { User, UserSchema } from './schemas/user.schema';
 import { Payment, PaymentSchema } from './schemas/payment.schema';
+import { AppDbService } from './app.db';
 
 @Module({
   imports: [
@@ -22,6 +23,6 @@ import { Payment, PaymentSchema } from './schemas/payment.schema';
     ]),
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, AppDbService],
 })
 export class AppModule {}
