@@ -29,12 +29,6 @@ MONGO_URI=mongodb://localhost:27017/xpayments
 
 Make sure MongoDB is running on your local machine. If you don't have MongoDB installed, you can download and install it from the [official website](https://www.mongodb.com/try/download/community).
 
-To start MongoDB:
-
-```sh
-mongod
-```
-
 You can also use [MongoDB Compass](https://www.mongodb.com/docs/compass/current/install/) to view and manage your database
 
 ### Run the Application
