@@ -54,7 +54,7 @@ export class AppService {
     postPaymentDto: PostPaymentRequestDto,
     user: UserDocument,
     existingPayment?: PaymentDocument,
-  ) {
+  ): Promise<PostPaymentResponseDto> {
     const { newPayment, updatedUserBalance } =
       await this.appDbService.handleSuccessfulPaymentTransaction(
         postPaymentDto,
@@ -71,7 +71,9 @@ export class AppService {
     throw new PaymentProcessingError();
   }
 
-  private async handleFailedPayment(postPaymentDto: PostPaymentRequestDto) {
+  private async handleFailedPayment(
+    postPaymentDto: PostPaymentRequestDto,
+  ): Promise<PostPaymentResponseDto> {
     await this.appDbService.createPayment(postPaymentDto);
 
     return {
