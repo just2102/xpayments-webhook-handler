@@ -6,11 +6,12 @@ import { AppService } from './app.service';
 import { User, UserSchema } from './schemas/user.schema';
 import { Payment, PaymentSchema } from './schemas/payment.schema';
 import { AppDbService } from './app.db';
+import { getDbUri } from './db/db';
 
 @Module({
   imports: [
     ConfigModule.forRoot(),
-    MongooseModule.forRoot(process.env.MONGO_URI),
+    MongooseModule.forRoot(getDbUri()),
     MongooseModule.forFeature([
       {
         name: User.name,

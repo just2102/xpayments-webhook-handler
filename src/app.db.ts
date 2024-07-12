@@ -70,7 +70,7 @@ export class AppDbService {
   private async updateUserBalance(
     user: UserDocument,
     amount: number,
-  ): Promise<UpdateWriteOpResult> {
+  ): Promise<UpdateWriteOpResult | void> {
     if (!user) {
       return;
     }

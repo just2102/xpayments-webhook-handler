@@ -62,7 +62,7 @@ export class AppService {
         existingPayment,
       );
 
-    if (newPayment !== null && updatedUserBalance.modifiedCount === 1) {
+    if (newPayment !== null && updatedUserBalance?.modifiedCount === 1) {
       return {
         success: true,
       };
