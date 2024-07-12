@@ -6,13 +6,13 @@ export type PaymentDocument = HydratedDocument<Payment>;
 
 @Schema()
 export class Payment {
-  @Prop()
+  @Prop({ required: true, index: true, unique: true })
   paymentId: number;
 
-  @Prop()
+  @Prop({ required: true })
   date: string;
 
-  @Prop()
+  @Prop({ required: true })
   status: PaymentStatus;
 }
 
